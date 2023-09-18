@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>E : Room 환영합니다</title>
+    <th:block layoyt:fragment="css"></th:block>
+    <link th:href="@{/css/site0913.css}" rel="stylesheet">
+</head>
+<body>
+    <div th:replace="~{fragments/header.html}"></div>
+    <div layout:fragment="content"></div>
+    <div th:replace="~{fragments/footer.html}"></div>
+</body>
+</html>
