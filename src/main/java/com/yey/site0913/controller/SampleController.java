@@ -29,4 +29,9 @@ public class SampleController {
         
     }
 
+    @GetMapping("/")
+    public String main(){
+        return "main";
+    }
+
 }
