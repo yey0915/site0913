@@ -9,10 +9,33 @@
 </head>
 <body>
     <div layout:fragment="content">
-        <h5>입고 페이지</h5>
-        <div>
+        <div id="inform">
+            <h5>입고 페이지</h5>
             <form method="POST" action="#">
-
+                <div>
+                    <label for="ProductName">제품명</label>
+                    <input type="text" id="ProductName" name="ProductName" placeholder="제품명을 입력하세요">
+                </div>
+                <div>
+                    <label for="ProductContent">제품설명</label>
+                    <input type="text" id="ProductContent" name="ProductContent" placeholder="제품설명을 입력하세요">
+                </div>
+                <div>
+                    <label for="writer">작성자</label>
+                    <input type="text" id="writer" name="writer">
+                </div>
+                <div>
+                    <label for="qty">입고수량</label>
+                    <input type="text" id="qty" name="qty" placeholder="입고 수량을 적어주세요">
+                </div>
+                <div>
+                    <label for="imgProduct">파일</label>
+                    <input type="file" id="imgProduct" name="imgProduct">
+                </div>
+                <div>
+                    <input type="button" id="btnProdReg" name="btnProdReg" value="상품 등록">
+                    <input type="button" id="btnProdCnl" name="btnProdCnl" value="등록 취소">
+                </div>
             </form>
         </div>
     </div>
