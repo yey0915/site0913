@@ -16,9 +16,9 @@ public class Board extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long bno;
     @Column(length = 500, nullable = false)
-    private String title;
+    private String ProductName;
     @Column(length = 2000, nullable = false)
-    private String content;
+    private String ProductContent;
     @Column(length = 50, nullable = false)
     private String writer;
     @Column(nullable = false)
