@@ -1,6 +1,5 @@
 @charset "utf-8";
 
-*{font-family: "malgun", sans-serif; font-size: 10px; color: #333333;}
 a {text-decoration: none;}
 
 @media only screen and (min-width: 992px) {
@@ -79,9 +78,43 @@ a {text-decoration: none;}
         margin: 10px auto;
     }
 
+    /*데이터 목록 리스트*/
+    #title > div{
+        width: 100px;
+        height: 30px;
+        background-color: #dddddd;
+        text-align: center;
+        padding-top: 5px;
+        font-size: 11pt;
+        color: #555555;
+        float: left;
+    }
+
+    .row {
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        font-size: 11pt;
+        float: left;
+    }
+
+    #clear{
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    #wrap{
+        width: 800px;
+        margin: 0 auto;
+    }
+
+
     footer{
         text-align: center;
-        margin-bottom: 0;
+        font-size: 12px;
+        color: #555555;
+        margin-top: 100px;
     }
 }
 

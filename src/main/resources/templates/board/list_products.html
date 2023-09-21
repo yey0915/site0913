@@ -3,13 +3,25 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layouts/layout1}">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <div layout:fragment="content">
+
+    <div layout:fragment="content" id="wrap">
         <h5>재고 리스트 페이지</h5>
+        <div id="title">
+            <div>번호</div>
+            <div>제품명</div>
+            <div>작성장</div>
+            <div>수량</div>
+            <div>조회수</div>
+            <div>작성일</div>
+        </div>
+        <div id="clear"  th:each="dto:${boardList}">
+            <div class="row" th:text="${dto.bno}"></div>
+            <div class="row"><a th:href="|@{/board/View_products(bno=${dto.bno})}|" th:text="${dto.ProductName}"><!--[[${dto.ProductName}]]--></a></div>
+            <div class="row" th:text="${dto.writer}"></div>
+            <div class="row" th:text="${dto.qty}"></div>
+            <div class="row" th:text="${dto.hit}"></div>
+            <div class="row" th:text="${dto.regDate}"></div>
+        </div>
     </div>
-</body>
+
 </html>

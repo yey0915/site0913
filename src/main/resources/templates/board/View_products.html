@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+
+    <th:block layout:fragment="script">
+        <script>
+            function aa(){
+                alert("자바스크립트 확인하기");
+            }
+        </script>
+    </th:block>
+
+    <div layout:fragment="content" id="wrap">
+        <h4>상세페이지</h4>
+        <form method="POST">
+            <div>
+                <div>번호 : <span th:text="${dto.bno}"></span></div>
+                <div>상품명 : <span th:text="${dto.ProductName}"></span></div>
+                <div>상품설명 : <span th:text="${dto.ProductContent}"></span></div>
+                <div>작성자 : <span th:text="${dto.writer}"></span></div>
+                <div>수량 : <span th:text="${dto.qty}"></span></div>
+                <div>파일 : <span>파일 설정중!!!!</span></div>
+            </div>
+            <input type="button" value="목록" onclick="aa()">
+            <input type="button" value="글쓰기">
+        </form>
+    </div>
+
+</html>
