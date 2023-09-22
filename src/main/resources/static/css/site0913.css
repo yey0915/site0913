@@ -2,121 +2,153 @@
 
 a {text-decoration: none;}
 
-@media only screen and (min-width: 992px) {
-    #header{
-        background-color: antiquewhite;
-        background-image: url("../images/img_header_bg.png");
-        background-position: top center;
-        background-repeat: no-repeat;
-        margin: auto;
-        max_width: 1100px;
-        height: 330px;
-    }
-    #header ul{background-color: rgba(170,170,170,0.7); width: 100%; height: 30px}
-    #header ul li{
-        width: 110px; height: 30px; display: inline-block; float: right; vertical-align: middle;
-        margin-right: 70px; color: #ffffff;
-    }
-
-    #inform{
-        width: 700px;
-        margin: auto;
-    }
-
-    form > div > label {
-        display: inline-block;
-        width: 100px;
-        text-align: justify;
-        font-family: "malgun", sans-serif ;
-        color: #555555;
-        font-size: 11pt;
-    }
-
-
-
-    /*input type*/
-    input[type="text"]{
-        display: inline-block;
-        width: 550px;
-        height: 30px;
-        border: 1px solid #cccccc;
-        border-radius: 5px;
-        margin: 5px;
-        color: #999999;
-        font-size: 11pt;
-    }
-
-    input[type="file"]{
-        display: inline-block;
-        margin: 5px;
-        width: 550px;
-        height: 30px;
-        border: 1px solid #cccccc;
-    }
-
-    input[type="button"]{
-        background-color: #999999;
-        border: 1px solid #555555;
-        color: white;
-        padding: 10px 30px;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 12px;
-        width: 110px;
-        margin: 10px auto;
-    }
-
-    input[type="submit"]{
-        background-color: #999999;
-        border: 1px solid #555555;
-        color: white;
-        padding: 10px 30px;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 12px;
-        width: 110px;
-        margin: 10px auto;
-    }
-
-    /*데이터 목록 리스트*/
-    #title > div{
-        width: 100px;
-        height: 30px;
-        background-color: #dddddd;
-        text-align: center;
-        padding-top: 5px;
-        font-size: 11pt;
-        color: #555555;
-        float: left;
-    }
-
-    .row {
-        width: 100px;
-        height: 30px;
-        text-align: center;
-        font-size: 11pt;
-        float: left;
-    }
-
-    #clear{
-        content: "";
-        display: block;
-        clear: both;
-    }
-
-    #wrap{
-        width: 800px;
-        margin: 0 auto;
-    }
-
-
-    footer{
-        text-align: center;
-        font-size: 12px;
-        color: #555555;
-        margin-top: 100px;
-    }
+#header{
+    background-color: antiquewhite;
+    background-image: url("../images/img_header_bg.png");
+    background-position: top center;
+    background-repeat: no-repeat;
+    margin: auto;
+    max_width: 1100px;
+    height: 330px;
 }
+#header ul{background-color: rgba(170,170,170,0.7); width: 100%; height: 30px}
+#header ul li{
+    width: 110px; height: 30px; display: inline-block; float: right; vertical-align: middle;
+    margin-right: 70px; color: #ffffff; font-size: 0.9em;
+}
+
+#exp{
+    font-size: 0.7em;
+    font-family: "malgun", sans-serif;
+    color: #999999;
+}
+
+hr{
+    border-width: 1px 0 0 0;
+    border-style: dotted;
+    border-color: #555555;
+}
+
+#inform{
+    width: 800px;
+    margin: 20px auto;
+}
+
+form > div > label {
+    display: inline-block;
+    width: 100px;
+    text-align: justify;
+    font-family: "malgun", sans-serif ;
+    color: #555555;
+    font-size: 0.9em;
+}
+
+
+
+/*input type*/
+input[type="text"]{
+    display: inline-block;
+    width: 650px;
+    height: 30px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    margin: 5px;
+    color: #999999;
+    font-size: 0.9em;
+    /*box-shadow: 2px 2px 2px #dddddd, -2px -2px 2px #dddddd;*/
+}
+
+input[type="file"]{
+    display: inline-block;
+    margin: 0 5px;
+    width: 650px;
+    border: 1px solid #cccccc;
+}
+
+input[type="file"]::file-selector-button{
+    background-color: #70b0c2;
+    border: 1px solid #cccccc;
+    color: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.8em;
+    width: 110px;
+    margin: 0 auto;
+}
+
+input[type="button"]{
+    background-color: #70b0c2;
+    border: 1px solid #cccccc;
+    color: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.8em;
+    width: 110px;
+    margin: 10px auto;
+}
+
+input[type="submit"]{
+    background-color: #70b0c2;
+    border: 1px solid #cccccc;
+    color: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.8em;
+    width: 110px;
+    margin: 10px auto;
+}
+
+#btnlist{
+    margin-top: 20px;
+}
+
+/*데이터 목록 리스트*/
+#title > div{
+    width: 100px;
+    height: 30px;
+    background-color: #dddddd;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 0.9em;
+    color: #555555;
+    float: left;
+}
+
+/*서브 타이틀*/
+#subtitle{
+    width: 50px;
+}
+
+.row {
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    font-size: 0.9em;
+    float: left;
+}
+
+#clear{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#wrap{
+    width: 800px;
+    margin: 0 auto;
+}
+
+
+footer{
+    text-align: center;
+    font-size: 0.95em;
+    color: #555555;
+    margin-top: 100px;
+}
+
 
 @media only screen and (max-width: 600px){
     #header{

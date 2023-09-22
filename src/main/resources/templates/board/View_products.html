@@ -6,8 +6,11 @@
 
     <th:block layout:fragment="script">
         <script>
-            function aa(){
-                alert("자바스크립트 확인하기");
+            function list(){
+                location.href='/board/list_products';
+            }
+            function reg(){
+                location.href='/board/in_products';
             }
         </script>
     </th:block>
@@ -23,8 +26,8 @@
                 <div>수량 : <span th:text="${dto.qty}"></span></div>
                 <div>파일 : <span>파일 설정중!!!!</span></div>
             </div>
-            <input type="button" value="목록" onclick="aa()">
-            <input type="button" value="글쓰기">
+            <input type="button" value="목록" onclick="list()">
+            <input type="button" value="글쓰기" onclick="reg()">
         </form>
     </div>
 

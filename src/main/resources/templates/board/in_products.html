@@ -10,7 +10,14 @@
 <body>
     <div layout:fragment="content">
         <div id="inform">
+            <img src="../images/a02.png" id="subtitle">
             <h5>입고 페이지</h5>
+            <div>
+                <p id="exp">CICS는 임시 데이터를 사용하여 나중에 처리할 수 있도록 데이터 큐를 빌드하고, 인쇄를 위해 시스템 큐에 메시지를 넣고, 큐 트리거 레벨을 기반으로 태스크를 시작하며,
+                    복구를 위한 로깅을 요청한다. 애플리케이션은 임시 데이터를 사용하여 트리거 레벨에 도달할 때 (ATI) 메시지를 인쇄하고, 태스크 간에 데이터를 전송하며,
+                    배치 처리를 위해 데이터를 캡처합니다</p>
+            </div>
+            <hr>
             <form method="POST" action="/board/in_products">
                 <div>
                     <label for="ProductName">제품명</label>
@@ -29,10 +36,10 @@
                     <input type="text" id="qty" name="qty" placeholder="입고 수량을 적어주세요">
                 </div>
                 <div>
-                    <label for="imgProduct">파일</label>
-                    <input type="file" id="imgProduct" name="imgProduct">
+                    <label for="fileProduct">파일</label>
+                    <input type="file" id="fileProduct" name="fileProduct">
                 </div>
-                <div>
+                <div id="btnlist">
                     <input type="submit" id="btnProdReg" name="btnProdReg" value="상품 등록">
                     <input type="button" id="btnProdCnl" name="btnProdCnl" value="등록 취소">
                 </div>
