@@ -1,5 +1,6 @@
 package com.yey.site0913.dto;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -22,6 +23,7 @@ public class PageResponseDTO<E> {
 
     private List<E> dtoList;
 
+    @Builder(builderMethodName = "withAll")
     public PageResponseDTO(PageRequestDTO pageRequestDTO, List<E> dtoList, int total){
         if(total <= 0){return;}
 

@@ -46,6 +46,16 @@ form > div > label {
 
 
 /*input type*/
+select{
+    border: 1px solid #cccccc;
+    padding: 5px;
+    display: inline-block;
+    font-size: 0.8em;
+    width: 110px;
+    color: #555555;
+    margin: 10px auto;
+}
+
 input[type="text"]{
     display: inline-block;
     width: 650px;
@@ -141,6 +151,14 @@ input[type="submit"]{
     margin: 0 auto;
 }
 
+/*페이징 처리*/
+/*#pageNum > ul{*/
+/*    margin-left: 300px;*/
+/*}*/
+#pageNum > ul > li{
+    list-style: none;
+    display: inline-block;
+}
 
 footer{
     text-align: center;

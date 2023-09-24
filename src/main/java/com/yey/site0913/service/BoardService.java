@@ -11,6 +11,7 @@ public interface BoardService{
     Long register(BoardDTO boardDTO);
     BoardDTO readOne(Long bno);
 
-    List<BoardDTO> list();
+//    List<BoardDTO> list();
+    PageResponseDTO<BoardDTO> list(PageRequestDTO pageRequestDTO);
 
 }

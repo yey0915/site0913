@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -41,13 +42,31 @@ public class BoardServiceImpl implements BoardService{
         return boardDTO;
     }
 
+//    @Override
+//    public List<BoardDTO> list() {
+//        log.info("service............list");
+//        List<BoardDTO>  boardDTOList = boardRepository.findAll()
+//                .stream()
+//                .map(board -> modelMapper.map(board, BoardDTO.class))
+//                .collect(Collectors.toList());
+//        return boardDTOList;
+//    }
+
     @Override
-    public List<BoardDTO> list() {
-        log.info("service............list");
+    public PageResponseDTO<BoardDTO> list(PageRequestDTO pageRequestDTO) {
+        log.info("service................list");
         List<BoardDTO>  boardDTOList = boardRepository.findAll()
                 .stream()
                 .map(board -> modelMapper.map(board, BoardDTO.class))
                 .collect(Collectors.toList());
-        return boardDTOList;
+
+        long result = boardRepository.count();
+
+        return PageResponseDTO.<BoardDTO>withAll()
+                .pageRequestDTO(pageRequestDTO)
+                .dtoList(boardDTOList)
+                .total((int)result)
+                .build();
     }
+
 }

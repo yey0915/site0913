@@ -47,10 +47,11 @@ public class BoardController {
     }
 
     @GetMapping("/board/list_products")
-    public void listProducts(Model model){
-        log.info("list Controller............................list");
-        List<BoardDTO> boardDTOList = boardService.list();
-        model.addAttribute("boardList", boardDTOList);
+    public void listProducts(Model model, PageRequestDTO pageRequestDTO){
+//        List<BoardDTO> boardDTOList = boardService.list();
+        PageResponseDTO<BoardDTO> responseDTO = boardService.list(pageRequestDTO);
+        log.info("list Controller............................list  : >>> " + responseDTO);
+        model.addAttribute("boardList", responseDTO);
     }
 
 

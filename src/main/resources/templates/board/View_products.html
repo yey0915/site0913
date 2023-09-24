@@ -4,17 +4,6 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layouts/layout1}">
 
-    <th:block layout:fragment="script">
-        <script>
-            function list(){
-                location.href='/board/list_products';
-            }
-            function reg(){
-                location.href='/board/in_products';
-            }
-        </script>
-    </th:block>
-
     <div layout:fragment="content" id="wrap">
         <h4>상세페이지</h4>
         <form method="POST">
@@ -26,9 +15,23 @@
                 <div>수량 : <span th:text="${dto.qty}"></span></div>
                 <div>파일 : <span>파일 설정중!!!!</span></div>
             </div>
-            <input type="button" value="목록" onclick="list()">
-            <input type="button" value="글쓰기" onclick="reg()">
+            <input type="button" class="btnlist" value="목록">
+            <input type="button" class="btnreg" value="글쓰기">
         </form>
     </div>
+    <script layout:fragment="script" th:inline="javascript">
+        document.querySelector(".btnreg").addEventListener("click", function (e){
+            e.preventDefault()
+            e.stopPropagation()
 
+            self.location.href = "/board/in_products"
+        }, false)
+
+        document.querySelector(".btnlist").addEventListener("click", function (e){
+            e.preventDefault()
+            e.stopPropagation()
+
+            self.location.href = "/board/list_products"
+        }, false)
+    </script>
 </html>

@@ -9,11 +9,14 @@
     <th:block layoyt:fragment="css"></th:block>
     <th:block layout:fragment="script"></th:block>
     <link th:href="@{/css/site0913.css}" rel="stylesheet">
+    <script th:src="@{/js/site0913.js}"></script>
 
 </head>
 <body>
     <div th:replace="~{fragments/header.html}"></div>
     <div layout:fragment="content"></div>
     <div th:replace="~{fragments/footer.html}"></div>
+
+    <th:block layout:fragment="script"></th:block>
 </body>
 </html>
