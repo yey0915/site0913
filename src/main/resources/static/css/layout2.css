@@ -4,29 +4,18 @@ a {text-decoration: none;}
 
 #header{
     background-color: antiquewhite;
-    background-image: url("../images/img_header_bg.png");
+    background-image: url("../images/img_header_bg02.png");
     background-position: top center;
     background-repeat: no-repeat;
     margin: auto;
     max_width: 1100px;
     height: 330px;
 }
-#header ul{background-color: rgba(170,170,170,0.7); width: 100%; height: 60px;}
+
+#header ul{background-color: rgba(125,124,124,0.8); width: 100%; height: 60px; }
 #header ul li{
-    width: 110px; height: 30px; display: inline-block; float: right; vertical-align: middle;
+    width: 110px; display: inline-block; float: right; vertical-align: middle;
     margin-right: 70px; color: #ffffff; font-size: 0.9em;
-}
-
-#exp{
-    font-size: 0.7em;
-    font-family: "malgun", sans-serif;
-    color: #999999;
-}
-
-hr{
-    border-width: 1px 0 0 0;
-    border-style: dotted;
-    border-color: #555555;
 }
 
 #inform{
@@ -42,7 +31,6 @@ form > div > label {
     color: #555555;
     font-size: 0.9em;
 }
-
 
 
 /*input type*/
@@ -103,16 +91,13 @@ input[type="submit"]{
     background-color: #70b0c2;
     border: 1px solid #cccccc;
     color: white;
-    padding: 10px 30px;
+    padding: 10px;
     text-decoration: none;
     display: inline-block;
     font-size: 0.8em;
+    text-align: center;
     width: 110px;
     margin: 10px auto;
-}
-
-#btnlist{
-    margin-top: 20px;
 }
 
 /*데이터 목록 리스트*/
@@ -127,14 +112,13 @@ input[type="submit"]{
     float: left;
 }
 
-/*서브 타이틀*/
 #subtitle{
     width: 50px;
 }
 
 .row {
     width: 100px;
-    height: 30px;
+    height: 50px;
     text-align: center;
     font-size: 0.9em;
     float: left;
@@ -147,36 +131,14 @@ input[type="submit"]{
 }
 
 #wrap{
-    width: 800px;
+    width: 1000px;
     margin: 0 auto;
 }
 
-/*페이징 처리*/
-/*#pageNum > ul{*/
-/*    margin-left: 300px;*/
-/*}*/
-#pageNum > ul > li{
-    list-style: none;
-    display: inline-block;
-    margin-top: 30px;
-}
 
 footer{
     text-align: center;
     font-size: 0.95em;
     color: #555555;
     margin-top: 100px;
-}
-
-
-@media only screen and (max-width: 600px){
-    #header{
-        background-color: #F4F9F9;
-        background-image: url("../images/cell_main.jpg");
-        background-position: top center;
-        background-repeat: no-repeat;
-        margin: auto;
-        max_width: 1100px;
-        height: 330px;
-    }
 }

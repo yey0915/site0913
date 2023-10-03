@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout2}">
+<body>
+<div layout:fragment="content">
+    <div id="inform">
+        <img src="../images/a01.png" id="subtitle">
+        <h5>입고 페이지</h5>
+        <div>
+            <p id="exp">CICS는 임시 데이터를 사용하여 나중에 처리할 수 있도록 데이터 큐를 빌드하고, 인쇄를 위해 시스템 큐에 메시지를 넣고, 큐 트리거 레벨을 기반으로 태스크를 시작하며,
+                복구를 위한 로깅을 요청한다. 애플리케이션은 임시 데이터를 사용하여 트리거 레벨에 도달할 때 (ATI) 메시지를 인쇄하고, 태스크 간에 데이터를 전송하며,
+                배치 처리를 위해 데이터를 캡처합니다</p>
+        </div>
+        <hr>
+        <form method="POST" action="/material/reg_mat">
+            <div>
+                <label for="matGupID">자재그룹ID</label>
+                <input type="text" id="matGupID" name="matGupID" placeholder="자재그룹ID를 입력">
+            </div>
+            <div>
+                <label for="matGupNm">자재그룹명</label>
+                <input type="text" id="matGupNm" name="matGupNm" placeholder="자재그룹명 입력">
+            </div>
+            <div>
+                <label for="description">자재설명</label>
+                <input type="text" id="description" name="description">
+            </div>
+            <div id="btnlist">
+                <input type="submit" id="btnMatReg" name="btnMatReg" value="자재그룹등록">
+                <input type="button" id="btnMatCnl" name="btnMatCnl" value="취소">
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

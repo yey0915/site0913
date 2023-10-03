@@ -54,19 +54,38 @@ public class BoardServiceImpl implements BoardService{
 
     @Override
     public PageResponseDTO<BoardDTO> list(PageRequestDTO pageRequestDTO) {
+
         log.info("service................list");
-        List<BoardDTO>  boardDTOList = boardRepository.findAll()
+        Pageable pageable = pageRequestDTO.getPageable("bno");
+        Page<Board> result = boardRepository.findAll(pageable);
+
+        List<BoardDTO>  boardDTOList = result
+                .getContent()
                 .stream()
                 .map(board -> modelMapper.map(board, BoardDTO.class))
                 .collect(Collectors.toList());
 
-        long result = boardRepository.count();
-
         return PageResponseDTO.<BoardDTO>withAll()
                 .pageRequestDTO(pageRequestDTO)
                 .dtoList(boardDTOList)
-                .total((int)result)
+                .total((int)result.getTotalElements())
                 .build();
     }
+//    public PageResponseDTO<BoardDTO> list(PageRequestDTO pageRequestDTO) {
+//
+//        log.info("service................list");
+//        List<BoardDTO>  boardDTOList = boardRepository.findAll()
+//                .stream()
+//                .map(board -> modelMapper.map(board, BoardDTO.class))
+//                .collect(Collectors.toList());
+//
+//        long result = boardRepository.count();
+//
+//        return PageResponseDTO.<BoardDTO>withAll()
+//                .pageRequestDTO(pageRequestDTO)
+//                .dtoList(boardDTOList)
+//                .total((int)result)
+//                .build();
+//    }
 
 }

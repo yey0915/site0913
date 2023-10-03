@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout2}">
+
+  <div layout:fragment="content" id="wrap">
+    <h5>자재그룹 리스트 페이지</h5>
+    <div id="searchForm">
+      <form action="/material/list_material_group" method="get">
+        <input type="text" name="size" th:value="${matList.size}">
+        <select>
+          <option selected>--</option>
+          <option value="t">제목</option>
+          <option value="c">내용</option>
+          <option value="w">작성자</option>
+          <option value="tc">제목 내용</option>
+          <option value="tcw">제목 내용 작성자</option>
+        </select>
+        <input type="text" name="keyword" id="keyword">
+        <input type="button" name="btnsearch" value="검색">
+      </form>
+    </div>
+    <div id="title">
+      <div>자재그룹ID</div>
+      <div>자재그룹명</div>
+      <div>설명</div>
+    </div>
+    <div id="clear"  th:each="dto:${matList.dtoList}">
+      <div class="row" th:text="${dto.matGupID}"></div>
+      <div class="row"><a th:href="|@{/material/view_material_group(bno=${dto.matGupID})}|" th:text="${dto.matGupNm}"><!--[[${dto.ProductName}]]--></a></div>
+      <div class="row" th:text="${dto.description}"></div>
+    </div>
+  </div>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout2}">
+<body>
+<div layout:fragment="content">
+  <div id="inform">
+    <img src="../images/a01.png" id="subtitle">
+    <h5>자재 품목 입고 페이지</h5>
+    <div>
+      <p id="exp">CICS는 임시 데이터를 사용하여 나중에 처리할 수 있도록 데이터 큐를 빌드하고, 인쇄를 위해 시스템 큐에 메시지를 넣고, 큐 트리거 레벨을 기반으로 태스크를 시작하며,
+        복구를 위한 로깅을 요청한다. 애플리케이션은 임시 데이터를 사용하여 트리거 레벨에 도달할 때 (ATI) 메시지를 인쇄하고, 태스크 간에 데이터를 전송하며,
+        배치 처리를 위해 데이터를 캡처합니다</p>
+    </div>
+    <hr>
+    <form method="POST" action="/material/reg_material_item">
+      <div>
+        <label for="matItemID">자재품목ID</label>
+        <input type="text" id="matItemID" name="matItemID" placeholder="자재품목ID를 입력">
+      </div>
+      <div>
+        <label for="specType">재질및특징</label>
+        <input type="text" id="specType" name="specType" placeholder="재질및 특성 입력">
+      </div>
+      <div>
+        <label for="customerID">공급업체코드</label>
+        <input type="text" id="customerID" name="customerID" placeholder="공급업체 코드 입력">
+      </div>
+      <div>
+        <label for="matGupID">자재그룹코드</label>
+        <input type="text" id="matGupID" name="matGupID" placeholder="자재그룹 코드 입력">
+      </div>
+      <div>
+        <label for="matCode">자재코드</label>
+        <input type="text" id="matCode" name="matCode" placeholder="자재코드 입력">
+      </div>
+      <div>
+        <label for="matNm">자재명</label>
+        <input type="text" id="matNm" name="matNm" placeholder="자재명 입력">
+      </div>
+      <div>
+        <label for="matType">사양</label>
+        <input type="text" id="matType" name="matType" placeholder="사양 입력">
+      </div>
+      <div>
+        <label for="matSpec">특징</label>
+        <input type="text" id="matSpec" name="matSpec" placeholder="특징 입력">
+      </div>
+      <div>
+        <label for="matUse">용도</label>
+        <input type="text" id="matUse" name="matUse" placeholder="용도 입력">
+      </div>
+      <div>
+        <label for="matPrice">단가</label>
+        <input type="text" id="matPrice" name="matPrice" placeholder="단가 입력">
+      </div>
+      <div>
+        <label for="matUnit">단위</label>
+        <input type="text" id="matUnit" name="matUnit" placeholder="단위 입력">
+      </div>
+      <div>
+        <label for="img">자재이미지</label>
+        <input type="file" id="img" name="img" value="삽입">
+      </div>
+      <div>
+        <label for="matOrdDeadline">주문소요기한</label>
+        <input type="text" id="matOrdDeadline" name="matOrdDeadline" placeholder="주문소요기한 입력">
+      </div>
+      <div>
+        <label for="matStorageCondition">보관조건</label>
+        <input type="text" id="matStorageCondition" name="matStorageCondition" placeholder="보관조건 입력">
+      </div>
+      <div id="btnlist">
+        <input type="submit" id="btnMatReg" name="btnMatReg" value="자재품목등록">
+        <input type="button" id="btnMatCnl" name="btnMatCnl" value="취소">
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>

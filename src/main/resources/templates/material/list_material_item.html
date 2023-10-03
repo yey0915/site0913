@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout2}">
+
+  <div layout:fragment="content" id="wrap">
+    <h5>자재품목 리스트 페이지</h5>
+    <div id="searchForm">
+      <form action="/material/list_material_item" method="get">
+        <input type="text" name="size" th:value="${matList.size}">
+        <select>
+          <option selected>--</option>
+          <option value="mid">자재품목ID</option>
+          <option value="msp">재질 및 특징</option>
+          <option value="cid">공급업체코드</option>
+          <option value="mgid">자재그룹코드</option>
+          <option value="mn">자재명</option>
+        </select>
+        <input type="text" name="keyword" id="keyword">
+        <input type="button" name="btnsearch" value="검색">
+      </form>
+    </div>
+    <div id="title">
+      <div>자재품목ID</div>
+      <div>자재이미지</div>
+      <div>재질및특징</div>
+      <div>공급업체코드</div>
+      <div>자재그룹코드</div>
+      <div>자재코드</div>
+      <div>자재명</div>
+      <div>사양</div>
+      <div>특징</div>
+    </div>
+    <div id="clear"  th:each="dto:${matList.dtoList}">
+      <div class="row" th:text="${dto.matItemID}"></div>
+      <div class="row"><a th:href="|@{/material/view_material_item(bno=${dto.matItemID})}|" th:text="${dto.img}"><!--[[${dto.img}]]--></a></div>
+      <div class="row" th:text="${dto.specType}"></div>
+      <div class="row" th:text="${dto.customerID}"></div>
+      <div class="row" th:text="${dto.matGupID}"></div>
+      <div class="row" th:text="${dto.matCode}"></div>
+      <div class="row" th:text="${dto.matNm}"></div>
+      <div class="row" th:text="${dto.matType}"></div>
+      <div class="row" th:text="${dto.matSpec}"></div>
+    </div>
+    <div id="pageNum">
+      <ul>
+        <!--                <input type="button" onclick="a_alert()">-->
+        <th:block th:each="i:${#numbers.sequence(matList.start, matList.end)}">
+          <li>
+            <a th:data-num="${i}">[[${i}]]</a>
+          </li>
+        </th:block>
+      </ul>
+    </div>
+  </div>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E : Room 환영합니다</title>
+  <th:block layoyt:fragment="css"></th:block>
+  <th:block layout:fragment="script"></th:block>
+  <link th:href="@{/css/layout2.css}" rel="stylesheet">
+  <script th:src="@{/js/site0913.js}"></script>
+
+</head>
+<body>
+<div th:replace="~{fragments/mat_header.html}"></div>
+<div layout:fragment="content"></div>
+<div th:replace="~{fragments/footer.html}"></div>
+
+<th:block layout:fragment="script"></th:block>
+</body>
+</html>
