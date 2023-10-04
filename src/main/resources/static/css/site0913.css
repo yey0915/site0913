@@ -9,7 +9,7 @@ a {text-decoration: none;}
     background-repeat: no-repeat;
     margin: auto;
     max_width: 1100px;
-    height: 330px;
+    height: 300px;
 }
 #header ul{background-color: rgba(170,170,170,0.7); width: 100%; height: 60px;}
 #header ul li{
@@ -111,6 +111,11 @@ input[type="submit"]{
     margin: 10px auto;
 }
 
+#btnSch:before{
+    content: '검색';
+    content-visibility: visible;
+}
+
 #btnlist{
     margin-top: 20px;
 }
@@ -168,6 +173,9 @@ footer{
     margin-top: 100px;
 }
 
+/*toggle*/
+#btn{display: none;}
+
 
 @media only screen and (max-width: 600px){
     #header{
@@ -177,6 +185,48 @@ footer{
         background-repeat: no-repeat;
         margin: auto;
         max_width: 1100px;
-        height: 330px;
+    }
+
+    #header ul{
+        height: 60%;
+    }
+    h3{
+        margin-bottom: 0;
+    }
+
+    #btn{
+        display: inline-block;
+    }
+    #header ul{display: none;}
+
+    input[type="text"]{
+        display: inline-block;
+        width: 300px;
+        height: 30px;
+        border: 1px solid #cccccc;
+        border-radius: 3px;
+        margin: 5px;
+        color: #999999;
+        font-size: 0.9em;
+        /*box-shadow: 2px 2px 2px #dddddd, -2px -2px 2px #dddddd;*/
+    }
+    /*#btnSch{*/
+    /*    width: 30px;*/
+    /*    height: 30px;*/
+    /*    padding: 0;*/
+    /*    background-image: url("../images/btnSch.png");*/
+    /*    background-repeat: no-repeat;*/
+    /*    background-size: contain;*/
+    /*    content: '글씨';*/
+    /*}*/
+    input[id="btnSch"]{
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        background-image: url("../images/btnSch.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: '글씨';
+
     }
 }

@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
                 xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-                layout:decorate="~{layouts/layout1}">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+                layout:decorate="~{layouts/layout3}">
+
+<script layout:fragment="script" th:inline="javascript">
+    $(document).ready(function (){
+        var cnt = 0;
+        $("#btnmenu").off().click(function (e){
+            alert(cnt)
+            $('#panel').slideToggle("slow");
+            cnt += 1;
+        });
+    });
+</script>
+
 <body>
     <div layout:fragment="content">
-      <h5>본문 영역</h5>
+        <h5>Layout3 본문 영역</h5>
+        <input type="button" id="btnmenu" name="btnmenu" value="클릭">
+        <div id="panel">
+            <ul>
+                <li>메뉴1</li>
+                <li>메뉴2</li>
+                <li>메뉴3</li>
+                <li>메뉴4</li>
+                <li>메뉴5</li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>

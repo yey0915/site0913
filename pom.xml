@@ -47,7 +47,7 @@
             <artifactId>spring-boot-starter-validation</artifactId>
             <version>3.1.4</version>
         </dependency>
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.mysema.querydsl/querydsl-apt &ndash;&gt;-->
+        <!-- https://mvnrepository.com/artifact/com.mysema.querydsl/querydsl-apt -->
 <!--        <dependency>-->
 <!--            <groupId>com.mysema.querydsl</groupId>-->
 <!--            <artifactId>querydsl-apt</artifactId>-->
@@ -60,16 +60,23 @@
 <!--            <artifactId>querydsl-jpa</artifactId>-->
 <!--            <version>3.7.4</version>-->
 <!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.webjars.bower/jquery -->
+        <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>jquery</artifactId>
+            <version>3.7.1</version>
+        </dependency>
+
         <dependency>
             <groupId>com.querydsl</groupId>
             <artifactId>querydsl-jpa</artifactId>
-            <version>4.4.0</version>
+<!--            <version>4.4.0</version>-->
         </dependency>
 
         <dependency>
             <groupId>com.querydsl</groupId>
             <artifactId>querydsl-apt</artifactId>
-            <version>4.4.0</version>
+<!--            <version>4.4.0</version>-->
         </dependency>
 
         <dependency>

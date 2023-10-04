@@ -4,11 +4,19 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layouts/layout1}">
 
+    <script layout:fragment="script" th:inline="javascript">
+        $(document).ready(function (){
+            $("#btn").off().click(function (){
+                $('#header>ul').slideToggle('slow');
+            });
+        });
+    </script>
+
     <div layout:fragment="content" id="wrap">
         <h5>재고 리스트 페이지</h5>
         <div id="searchForm">
             <form action="/board/list_products" method="get">
-                <input type="text" name="size" th:value="${boardList.size}">
+                <input type="hidden" name="size" th:value="${boardList.size}">
                 <select>
                     <option selected>--</option>
                     <option value="t">제목</option>
@@ -18,7 +26,7 @@
                     <option value="tcw">제목 내용 작성자</option>
                 </select>
                 <input type="text" name="keyword" id="keyword">
-                <input type="button" name="btnsearch" value="검색">
+                <input type="button" name="btnSch" id="btnSch">
             </form>
         </div>
         <div id="title">
@@ -50,24 +58,29 @@
     </div>
 
     <script layout:fragment="script" th:inline="javascript">
-        document.querySelector("#pageNum").addEventListener("click", function (e){
-            e.preventDefault()
-            e.stopPropagation()
-
-            const target = e.target
-
-            //alert(target.tagName)
-            if(target.tagName !== 'A'){
-                return
-            }
-
-            const num = target.getAttribute("data_num")
-            const formObj = document.querySelector("form")
-
-            formObj.innerHTML += '<input type="hidden" name="page" value="${num}">'
-            formObj.submit()
-
-        }, false)
+        // document.querySelector("#pageNum").addEventListener("click", function (e){
+        //     e.preventDefault()
+        //     e.stopPropagation()
+        //
+        //     const target = e.target
+        //
+        //     //alert(target.tagName)
+        //     if(target.tagName !== 'A'){
+        //         return
+        //     }
+        //
+        //     const num = target.getAttribute("data_num")
+        //     const formObj = document.querySelector("form")
+        //
+        //     formObj.innerHTML += '<input type="hidden" name="page" value="${num}">'
+        //     formObj.submit()
+        //
+        // }, false)
+        $(document).ready(function (){
+            $("#btn").off().click(function (){
+                $('#header>ul').slideToggle('slow');
+            });
+        });
     </script>
 
 

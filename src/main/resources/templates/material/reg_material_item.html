@@ -3,8 +3,19 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layouts/layout2}">
+
+<script layout:fragment="script" th:inline="javascript">
+  $(document).ready(function (){
+    $("#btnMatCnl").click(function (){
+      alert("jquery 확인용");
+      $('#panel').toggle();
+    });
+  });
+</script>
+
 <body>
 <div layout:fragment="content">
+  <div id="panel">토클 확인용</div>
   <div id="inform">
     <img src="../images/a01.png" id="subtitle">
     <h5>자재 품목 입고 페이지</h5>
@@ -78,5 +89,6 @@
     </form>
   </div>
 </div>
+
 </body>
 </html>
