@@ -43,7 +43,7 @@
       <div class="row" th:text="${dto.matType}"></div>
       <div class="row" th:text="${dto.matSpec}"></div>
     </div>
-    <div id="pageNum">
+    <div id="pageNum" class="pageNum">
       <ul>
         <!--                <input type="button" onclick="a_alert()">-->
         <th:block th:each="i:${#numbers.sequence(matList.start, matList.end)}">
@@ -54,4 +54,5 @@
       </ul>
     </div>
   </div>
+
 </html>

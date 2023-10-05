@@ -14,6 +14,7 @@
                 <div>작성자 : <span th:text="${dto.writer}"></span></div>
                 <div>수량 : <span th:text="${dto.qty}"></span></div>
                 <div>파일 : <span>파일 설정중!!!!</span></div>
+                <div>등록일 : <span th:text="${#temporals.format(dto.regDate, 'yyyy-MM-dd')}"></span></div>
             </div>
             <input type="button" class="btnlist" value="목록">
             <input type="button" class="btnreg" value="글쓰기">
