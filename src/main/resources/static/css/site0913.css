@@ -29,6 +29,15 @@ hr{
     border-color: #555555;
 }
 
+h4{
+    width: 100%;
+    background-color: #C2BDB7;
+    color: #444444;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+}
+
 #inform{
     width: 800px;
     margin: 20px auto;
@@ -144,6 +153,20 @@ input[type="submit"]{
     float: left;
 }
 
+.row01{
+    padding:10px; border: 1px solid #444444; font-size: 0.9em; color: #444444;
+    border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: #f2e8e8; margin-bottom: 10px;
+}
+.row01 > label{
+    width: 120px; display: inline-block; float: left; text-align: center;
+}
+
+.span01{
+    background-color: #fcfcfc; display: inline-block; width: 80%; height: 30px; padding-top: 5px;
+    padding-left: 10px; border: 1px solid #cccccc; font-size: 0.9em; color: #555555;
+}
+
 #clear{
     content: "";
     display: block;
@@ -175,7 +198,7 @@ footer{
 /*toggle*/
 #btn{display: none;}
 
-
+/* phone ******************************/
 @media only screen and (max-width: 600px){
     #header{
         background-color: #F4F9F9;
@@ -191,6 +214,12 @@ footer{
     }
     h3{
         margin-bottom: 0;
+    }
+
+    #wrap{width: 450px}
+
+    #wrap > h4{
+        width: 100%;
     }
 
     #btn{

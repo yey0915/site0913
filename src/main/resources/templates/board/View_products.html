@@ -5,19 +5,31 @@
       layout:decorate="~{layouts/layout1}">
 
     <div layout:fragment="content" id="wrap">
-        <h4>상세페이지</h4>
+        <h4>▶ 상세페이지</h4>
         <form method="POST">
             <div>
-                <div>번호 : <span th:text="${dto.bno}"></span></div>
-                <div>상품명 : <span th:text="${dto.ProductName}"></span></div>
-                <div>상품설명 : <span th:text="${dto.ProductContent}"></span></div>
-                <div>작성자 : <span th:text="${dto.writer}"></span></div>
-                <div>수량 : <span th:text="${dto.qty}"></span></div>
-                <div>파일 : <span>파일 설정중!!!!</span></div>
-                <div>등록일 : <span th:text="${#temporals.format(dto.regDate, 'yyyy-MM-dd')}"></span></div>
+                <div class="row01">
+                    <label>번호 : </label><span class="span01" th:text="${dto.bno}"></span></div>
+                <div class="row01">
+                    <label>상품명 : </label><span class="span01" th:text="${dto.ProductName}"></span></div>
+                <div class="row01">
+                    <label>상품설명 : </label><span class="span01" th:text="${dto.ProductContent}"></span></div>
+                <div class="row01">
+                    <label>작성자 : </label><span class="span01" th:text="${dto.writer}"></span></div>
+                <div class="row01">
+                    <label>수량 : </label><span class="span01" th:text="${dto.qty}"></span></div>
+                <div class="row01">
+                    <label >파일 : </label><span class="span01">파일 설정중!!!!</span></div>
+                <div class="row01">
+                    <label>등록일 : </label><span class="span01" th:text="${#temporals.format(dto.regDate, 'yyyy-MM-dd')}"></span></div>
             </div>
-            <input type="button" class="btnlist" value="목록">
-            <input type="button" class="btnreg" value="글쓰기">
+            <div class="btnlist">
+                <input type="button" class="btnlist" value="목록">
+                <input type="button" class="btnreg" value="글쓰기">
+                <input type="button" class="btnmod" value="수정">
+                <input type="button" class="btndel" value="삭제">
+            </div>
+
         </form>
     </div>
     <script layout:fragment="script" th:inline="javascript">
@@ -34,5 +46,12 @@
 
             self.location.href = "/board/list_products"
         }, false)
+
+
+        $(document).ready(function (){
+            $("#btn").off().click(function (){
+                $('#header>ul').slideToggle('slow');
+            });
+        });
     </script>
 </html>

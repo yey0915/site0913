@@ -8,7 +8,7 @@
     <h5>자재품목 리스트 페이지</h5>
     <div id="searchForm">
       <form action="/material/list_material_item" method="get">
-        <input type="text" name="size" th:value="${matList.size}">
+        <input type="hidden" name="size" th:value="${matList.size}">
         <select>
           <option selected>--</option>
           <option value="mid">자재품목ID</option>
@@ -19,6 +19,7 @@
         </select>
         <input type="text" name="keyword" id="keyword">
         <input type="button" name="btnsearch" value="검색">
+        <input type="button" name="btnCls" id="btnCls" value="초기화">
       </form>
     </div>
     <div id="title">
@@ -54,5 +55,37 @@
       </ul>
     </div>
   </div>
+  <script layout:fragment="script" th:inline="javascript">
+
+    window.onload = function (){
+      document.querySelector(".pageNum").addEventListener("click", function (e){
+        e.preventDefault()
+        e.stopPropagation()
+
+        const target = e.target
+        if(target.tagName !== 'A'){return}
+
+        const num = target.getAttribute("data-num")
+        const formObj = document.querySelector('form')
+        formObj.innerHTML += `<input type='hidden' name='page' value='${num}'>`
+        // alert(target.tagName)
+        // alert(num)
+        formObj.submit();
+      }, false)
+
+      document.querySelector("#btnCls").addEventListener("click", function (e){
+        e.preventDefault()
+        e.stopPropagation()
+
+        self.location = '/board/list_products'
+      }, false)
+    }
+
+    $(document).ready(function (){
+      $("#btn").off().click(function (){
+        $('#header>ul').slideToggle('slow');
+      });
+    });
+  </script>
 
 </html>

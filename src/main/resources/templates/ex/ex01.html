@@ -3,8 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        *{margin:0;}
+        header{
+            width: 100%;
+            height: 100px;
+            background-color: chocolate;
+        }
+        #left{
+            width: 20%;
+            height: 300px;
+            background-color: #70b0c2;
+            float: left;
+        }
+        #content{
+            width: 60%;
+            height: 300px;
+            background-color: darkred;
+            float: left;
+        }
+        #right{
+            width: 20%;
+            height: 300px;
+            background-color: #555555;
+            float: left;
+        }
+
+        h3{font-size: 1.8em; color: #ffffff;}
+        h4{font-size: 1.8em; color: #ffffff;}
+
+        footer{
+            clear: both;
+            width: 100%;
+            height: 80px;
+            background-color: midnightblue;
+        }
+
+    </style>
 </head>
 <body>
-    <h3>ex01 페이지</h3>
+    <header></header>
+    <div id="wrap">
+        <div id="left">
+            <h3>왼쪽</h3>
+        </div>
+        <div id="content">
+            <h4>중간</h4>
+        </div>
+        <div id="right">
+            <h3>오른족</h3>
+        </div>
+    </div>
+    <footer></footer>
 </body>
 </html>
