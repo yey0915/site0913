@@ -65,8 +65,7 @@ public class BoardController {
         model.addAttribute("dto", boardDTO);
 
     }
-//    public void read_products(){
-//
-//    }
+
+
 
 }

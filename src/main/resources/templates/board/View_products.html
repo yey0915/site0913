@@ -47,6 +47,20 @@
             self.location.href = "/board/list_products"
         }, false)
 
+        document.querySelector(".btnmod").addEventListener("click", function (e){
+            e.preventDefault()
+            e.stopPropagation()
+
+            self.location.href = "/board/mod_products"
+        }, false)
+
+        document.querySelector(".btndel").addEventListener("click", function (e){
+            e.preventDefault()
+            e.stopPropagation()
+
+            self.location.href = "/board/del_products"
+        }, false)
+
 
         $(document).ready(function (){
             $("#btn").off().click(function (){
