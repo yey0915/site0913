@@ -60,12 +60,43 @@ public class BoardController {
     @GetMapping("/board/View_products")
     public void View_products(Long bno, Model model, PageRequestDTO pageRequestDTO){
         BoardDTO boardDTO = boardService.readOne(bno);
-        log.info(boardDTO);
+        log.info("View product Controller ................... "+ boardDTO);
 
         model.addAttribute("dto", boardDTO);
 
     }
 
+    @GetMapping("/board/Mod_products")
+    public void Mod_products(Long bno, Model model, PageRequestDTO pageRequestDTO){
+        BoardDTO boardDTO = boardService.readOne(bno);
+        log.info(boardDTO);
 
+        model.addAttribute("dto", boardDTO);
+    }
+
+    @PostMapping("/board/modify")
+    public String modify(
+            PageRequestDTO pageRequestDTO,
+            @Valid BoardDTO boardDTO,
+            BindingResult bindingResult,
+            RedirectAttributes redirectAttributes
+        ){
+        log.info("board modify Controller Post..............." + boardDTO);
+
+        if(bindingResult.hasErrors()){
+            log.info("has errors..............");
+
+            String link = pageRequestDTO.getLink();
+            redirectAttributes.addFlashAttribute("errors", bindingResult.getAllErrors());
+            redirectAttributes.addAttribute("bno", boardDTO.getBno());
+            return "redirect:/board/modify?"+link;
+        }
+
+        boardService.modify(boardDTO);
+        redirectAttributes.addFlashAttribute("result", "modified");
+        redirectAttributes.addAttribute("bno", boardDTO.getBno());
+
+        return "redirect:/board/View_products";
+    }
 
 }

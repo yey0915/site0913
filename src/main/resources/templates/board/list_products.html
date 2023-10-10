@@ -34,7 +34,7 @@
         </div>
         <div id="clear"  th:each="dto:${boardList.dtoList}">
             <div class="row" th:text="${dto.bno}"></div>
-            <div class="row"><a th:href="|@{/board/View_products(bno=${dto.bno})}|" th:text="${dto.ProductName}"><!--[[${dto.ProductName}]]--></a></div>
+            <div class="row"><a th:href="|@{/board/View_products(bno=${dto.bno})}&${pageRequestDTO.getLink()}|" th:text="${dto.ProductName}"><!--[[${dto.ProductName}]]--></a></div>
             <div class="row" th:text="${dto.writer}"></div>
             <div class="row" th:text="${dto.qty}"></div>
             <div class="row" th:text="${dto.hit}"></div>

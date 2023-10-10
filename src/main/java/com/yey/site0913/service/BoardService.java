@@ -14,4 +14,6 @@ public interface BoardService{
 //    List<BoardDTO> list();
     PageResponseDTO<BoardDTO> list(PageRequestDTO pageRequestDTO);
 
+    void modify(BoardDTO boardDTO);
+
 }

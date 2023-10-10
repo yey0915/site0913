@@ -7,6 +7,7 @@
     <div layout:fragment="content" id="wrap">
         <h4>▶ 상세페이지</h4>
         <form method="POST">
+            <input type="hidden" id="link" name="link" th:value="${pageRequestDTO.getLink()}">
             <div>
                 <div class="row01">
                     <label>번호 : </label><span class="span01" th:text="${dto.bno}"></span></div>
@@ -51,14 +52,16 @@
             e.preventDefault()
             e.stopPropagation()
 
-            self.location.href = "/board/mod_products"
+            var link = document.getElementById("link").value;
+            var bno = document.querySelector(".span01").textContent;
+
+            self.location.href = "/board/Mod_products?bno="+ bno + "&" + link
         }, false)
 
         document.querySelector(".btndel").addEventListener("click", function (e){
             e.preventDefault()
             e.stopPropagation()
-
-            self.location.href = "/board/del_products"
+            self.location.href = "/board/Mod_products"
         }, false)
 
 

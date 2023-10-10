@@ -71,6 +71,7 @@ public class BoardServiceImpl implements BoardService{
                 .total((int)result.getTotalElements())
                 .build();
     }
+
 //    public PageResponseDTO<BoardDTO> list(PageRequestDTO pageRequestDTO) {
 //
 //        log.info("service................list");
@@ -87,5 +88,13 @@ public class BoardServiceImpl implements BoardService{
 //                .total((int)result)
 //                .build();
 //    }
+
+    @Override
+    public void modify(BoardDTO boardDTO) {
+        Optional<Board> result = boardRepository.findById(boardDTO.getBno());
+        Board board = result.orElseThrow();
+        board.change(boardDTO);
+        boardRepository.save(board);
+    }
 
 }
